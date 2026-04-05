@@ -188,9 +188,8 @@ html,body{margin:0;padding:0;background:var(--m1);}
 @keyframes cornerPulse{0%,100%{opacity:.7;}50%{opacity:1;}}
 
 /* side paisleys */
-.side-l,.side-r{position:absolute;top:50%;width:42px;pointer-events:none;z-index:2;}
-.side-l{left:18px;transform:translateY(-50%);}
-.side-r{right:18px;transform:translateY(-50%) scaleX(-1);}
+.corner{display:none;}
+.side-l,.side-r{display:none;}
 
 /* ambient glow */
 .glow-ring{
@@ -434,7 +433,7 @@ html,body{margin:0;padding:0;background:var(--m1);}
 .pd-food     {background:#2D8040;}
 .pd-general  {background:#6B8CAE;}
 .prog-body{flex:1;}
-.prog-time{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:1.5px;color:var(--g2);display:block;margin-bottom:3px;text-transform:uppercase;}
+.prog-time{font-family:'Cinzel',serif;font-size:9.5px;font-weight:600;letter-spacing:1.5px;color:var(--m2);display:block;margin-bottom:4px;text-transform:uppercase;opacity:1;}
 .prog-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:#1a0810;line-height:1.25;}
 .prog-resp{font-family:'Lato',sans-serif;font-weight:400;font-size:12px;color:#5a3828;margin-top:3px;display:block;line-height:1.4;}
 .prog-badge{
@@ -850,7 +849,7 @@ html,body{margin:0;padding:0;background:var(--m1);}
     <div class="cta-wrap">
       <div class="pulse-ring"></div>
       <div class="pulse-ring"></div>
-      <button class="cta" onclick="goP2()">View Tonight's Menus &nbsp;›</button>
+      <button class="cta" onclick="goP2()">View Celebration Guide &nbsp;›</button>
     </div>
   </div>
 </section>
@@ -1054,7 +1053,7 @@ html,body{margin:0;padding:0;background:var(--m1);}
         <div class="mi"><div class="mi-top"><span class="vdot" style="background:var(--g2);margin-top:6px;"></span><span class="mi-n">Red Wine</span></div><span class="mi-d">Full-bodied · room temperature</span></div>
         <div class="mi"><div class="mi-top"><span class="vdot" style="background:var(--g2);margin-top:6px;"></span><span class="mi-n">White Wine</span></div><span class="mi-d">Crisp &amp; chilled · served cold</span></div>
       </div>
-      <div class="note"><p>All drinks served chilled with premium ice<br/>Garnishes: lemon · mint · cherries · orange peel<br/>Mocktails prepared fresh at live bar<br/>Customisation available upon request</p></div>
+      <div class="note"><p>All drinks are served chilled with premium ice.<br/>Garnishes include lemon wedges, fresh mint, cherries &amp; orange peel.<br/>Mocktails are prepared fresh at the live bar.<br/>Customisation is available upon request.</p></div>
     </div>
 
     <!-- DINNER -->
