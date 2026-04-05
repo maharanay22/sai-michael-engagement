@@ -38,7 +38,14 @@ html,body{margin:0;padding:0;background:var(--m1);}
    PAGE 1 — GRAND INVITE
 ═══════════════════════════════════ */
 .invite{
-  position:relative;justify-content:center;align-items:center;overflow:hidden;
+  position:relative;
+  /* scrollable within fixed container */
+  overflow-y:auto;
+  overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+  /* stack content from top, centered */
+  justify-content:flex-start;
+  align-items:center;
   background:
     radial-gradient(ellipse 140% 90% at 50% -8%,  #9C1570 0%,transparent 52%),
     radial-gradient(ellipse 100% 70% at -5% 105%,  #5C0A3D 0%,transparent 50%),
@@ -61,14 +68,14 @@ html,body{margin:0;padding:0;background:var(--m1);}
 }
 
 /* ── ANIMATED BORDER ── */
-.gborder{position:absolute;inset:8px;border:1.5px solid rgba(212,168,75,.45);pointer-events:none;z-index:1;overflow:hidden;}
+.gborder{position:fixed;inset:8px;border:1.5px solid rgba(212,168,75,.45);pointer-events:none;z-index:1;overflow:hidden;}
 .gborder::after{
   content:'';position:absolute;width:70px;height:100%;
   background:linear-gradient(90deg,transparent,rgba(245,223,160,.65),transparent);
   animation:borderTravel 3.2s ease-in-out infinite;top:0;left:-70px;
 }
 @keyframes borderTravel{0%{left:-70px;opacity:1;}100%{left:110%;opacity:0;}}
-.gborder2{position:absolute;inset:15px;border:.5px solid rgba(212,168,75,.18);pointer-events:none;z-index:1;}
+.gborder2{position:fixed;inset:15px;border:.5px solid rgba(212,168,75,.18);pointer-events:none;z-index:1;}
 
 /* ── TWINKLING STARS ── */
 .stars{position:absolute;inset:0;pointer-events:none;z-index:1;}
@@ -164,7 +171,12 @@ html,body{margin:0;padding:0;background:var(--m1);}
 }
 
 /* ── INVITE CONTENT ── */
-.inv{position:relative;z-index:3;width:100%;max-width:400px;padding:0 26px;display:flex;flex-direction:column;align-items:center;}
+.inv{
+  position:relative;z-index:3;
+  width:100%;max-width:400px;
+  padding: calc(env(safe-area-inset-top,16px) + 16px) 26px calc(env(safe-area-inset-bottom,16px) + 20px);
+  display:flex;flex-direction:column;align-items:center;
+}
 
 .top-orn{display:flex;align-items:center;gap:6px;width:100%;margin-bottom:6px;animation:up .8s ease both;}
 .to-line{flex:1;height:1px;}
@@ -182,7 +194,7 @@ html,body{margin:0;padding:0;background:var(--m1);}
 @keyframes spinSlow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 
 /* names */
-.names{text-align:center;margin-bottom:6px;animation:up .8s .18s ease both;line-height:1;}
+.names{text-align:center;margin-bottom:6px;line-height:1;animation:up .8s .18s ease both, namesFloat 3.5s 1.5s ease-in-out infinite;}
 .name{
   font-family:'Cormorant Garamond',serif;font-weight:600;
   font-size:clamp(60px,16vw,78px);
@@ -545,19 +557,12 @@ html,body{margin:0;padding:0;background:var(--m1);}
   0%,100%{box-shadow:0 0 0 6px rgba(212,168,75,.18),0 0 0 8px rgba(212,168,75,.08),0 10px 30px rgba(0,0,0,.5);}
   50%{box-shadow:0 0 0 6px rgba(212,168,75,.4),0 0 0 10px rgba(212,168,75,.15),0 10px 40px rgba(212,168,75,.3);}
 }
-.name .ltr, .amp .ltr {
-  display: inline-block;
-  will-change: transform;
-  animation: letterWave 2.4s ease-in-out infinite, letterColor 4.5s ease-in-out infinite;
-}
-@keyframes letterWave {
-  0%,100% { transform: translateY(0px);   }
-  30%      { transform: translateY(-13px); }
-  60%      { transform: translateY(-5px);  }
-}
-@keyframes letterColor {
-  0%,100%{ color:#ECC96A; }
-  50%    { color:#F5DFA0; }
+.name .ltr, .amp .ltr { display: inline; }
+
+/* ── Whole-name gentle float — no directional drift ── */
+@keyframes namesFloat {
+  0%,100% { transform: translateY(0px); }
+  50%      { transform: translateY(-10px); }
 }
 </style>
 </head>
@@ -985,19 +990,6 @@ html,body{margin:0;padding:0;background:var(--m1);}
   }
 
   setInterval(cycleSaying, 8000);
-  let globalIdx = 0;
-  document.querySelectorAll('.name, .amp').forEach(el => {
-    const chars = [...el.textContent];
-    el.textContent = '';
-    chars.forEach(ch => {
-      const s = document.createElement('span');
-      s.className = 'ltr';
-      s.textContent = ch === ' ' ? '\u00A0' : ch;
-      s.style.animationDelay = (globalIdx * 0.11) + 's';
-      el.appendChild(s);
-      globalIdx++;
-    });
-  });
 </script>
 </body>
 </html>
