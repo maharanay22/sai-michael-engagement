@@ -352,15 +352,18 @@ html,body{margin:0;padding:0;background:var(--m1);}
 
 /* CTA */
 .cta{
-  width:100%;padding:20px 0;
+  width:100%;padding:18px 12px;
   background:linear-gradient(135deg,#8A6010,var(--g2),var(--g3),var(--g2),#8A6010);
   background-size:200% 100%;
   color:var(--m1);
   font-family:'Cinzel',serif;
-  font-size:14px;font-weight:600;
-  letter-spacing:3px;text-transform:uppercase;
+  font-size:clamp(10px,3vw,14px);font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
   border:none;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;gap:10px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  white-space:nowrap;
+  width:100%;
   animation:up .8s .4s ease both, gradMove 4s ease-in-out infinite;
   transition:opacity .2s,transform .15s;
   -webkit-appearance:none;
@@ -380,7 +383,7 @@ html,body{margin:0;padding:0;background:var(--m1);}
   background:linear-gradient(90deg,transparent 20%,rgba(255,255,255,.4) 50%,transparent 80%);
   transform:translateX(-100%);animation:sweep 2.5s 1.5s ease-in-out infinite;
 }
-.cta::after{ display:none; }
+.cta::after{display:none;}
 @keyframes sweep{0%{transform:translateX(-100%);}45%,100%{transform:translateX(120%);}}
 .cta:active{transform:scale(.97);opacity:.85;}
 
@@ -874,7 +877,7 @@ html,body{margin:0;padding:0;background:var(--m1);}
     <div class="cta-wrap">
       <div class="pulse-ring"></div>
       <div class="pulse-ring"></div>
-      <button class="cta" onclick="goP2()">✦ &nbsp; View Celebration Guide &nbsp; ✦</button>
+      <button class="cta" onclick="goP2()">View Celebration Guide</button>
     </div>
   </div>
 </section>
