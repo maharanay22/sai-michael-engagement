@@ -290,12 +290,14 @@ html,body{margin:0;padding:0;background:var(--m1);}
 }
 .ws-lang{
   display:inline-block;
-  margin-top:6px;
+  margin-top:8px;
   font-family:'Cinzel',serif;
-  font-size:6.5px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--g2);background:rgba(212,168,75,.1);
-  border:1px solid rgba(212,168,75,.3);
-  padding:2px 8px;border-radius:20px;
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--m1);
+  background:var(--g2);
+  border:none;
+  padding:4px 14px;border-radius:20px;
+  font-weight:600;
 }
 /* word span inside welcome saying */
 .wrd{
@@ -328,15 +330,6 @@ html,body{margin:0;padding:0;background:var(--m1);}
   letter-spacing:4px;text-transform:uppercase;
   color:var(--g2);opacity:.7;
   display:block;margin-top:5px;
-}
-.ws-lang{
-  display:inline-block;
-  margin-top:6px;
-  font-family:'Cinzel',serif;
-  font-size:6px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--m3);background:rgba(212,168,75,.12);
-  border:1px solid rgba(212,168,75,.3);
-  padding:2px 8px;border-radius:20px;
 }
 
 /* card */
@@ -480,19 +473,19 @@ html,body{margin:0;padding:0;background:var(--m1);}
 /* program notes box */
 .prog-note{
   margin-top:16px;
-  padding:12px 14px;
-  background:rgba(212,168,75,.08);
-  border:1px solid rgba(212,168,75,.3);
-  border-left:3px solid var(--g2);
+  padding:14px 16px;
+  background:var(--m2);
+  border:2px solid var(--g2);
+  border-radius:4px;
 }
 .prog-note-title{
-  font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;
-  color:var(--m2);display:block;margin-bottom:8px;
+  font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--g3);display:block;margin-bottom:10px;text-align:center;
 }
 .prog-note-item{
-  font-family:'Lato',sans-serif;font-weight:300;font-size:11px;
-  color:#5a3828;line-height:1.6;display:block;margin-bottom:4px;
-  padding-left:12px;position:relative;
+  font-family:'Cinzel',serif;font-size:9.5px;
+  color:var(--g3);line-height:1.9;display:block;margin-bottom:2px;
+  padding-left:14px;position:relative;letter-spacing:.3px;
 }
 .prog-note-item::before{content:'•';position:absolute;left:0;color:var(--g2);}
 
@@ -946,7 +939,6 @@ html,body{margin:0;padding:0;background:var(--m1);}
     <!-- ════ PROGRAM SLIDE ════ -->
     <div class="mc active" id="pc">
 
-      <!-- Venue opens banner -->
       <div class="venue-banner">
         <span>🏛️ &nbsp; Venue Opens: 6:00 PM &nbsp; 🏛️</span>
       </div>
@@ -958,7 +950,7 @@ html,body{margin:0;padding:0;background:var(--m1);}
         <span style="display:flex;align-items:center;gap:4px;font-family:'Lato',sans-serif;font-size:10px;color:#5a3828;"><span style="width:9px;height:9px;border-radius:50%;background:#D4A84B;flex-shrink:0;"></span>Ceremony</span>
         <span style="display:flex;align-items:center;gap:4px;font-family:'Lato',sans-serif;font-size:10px;color:#5a3828;"><span style="width:9px;height:9px;border-radius:50%;background:#9C59C8;flex-shrink:0;"></span>Toast</span>
         <span style="display:flex;align-items:center;gap:4px;font-family:'Lato',sans-serif;font-size:10px;color:#5a3828;"><span style="width:9px;height:9px;border-radius:50%;background:#D45492;flex-shrink:0;"></span>Performance</span>
-        <span style="display:flex;align-items:center;gap:4px;font-family:'Lato',sans-serif;font-size:10px;color:#5a3828;"><span style="width:9px;height:9px;border-radius:50%;background:#2D8040;flex-shrink:0;"></span>Food & Bar</span>
+        <span style="display:flex;align-items:center;gap:4px;font-family:'Lato',sans-serif;font-size:10px;color:#5a3828;"><span style="width:9px;height:9px;border-radius:50%;background:#2D8040;flex-shrink:0;"></span>Food &amp; Bar</span>
         <span style="display:flex;align-items:center;gap:4px;font-family:'Lato',sans-serif;font-size:10px;color:#5a3828;"><span style="width:9px;height:9px;border-radius:50%;background:#3A5A7A;flex-shrink:0;"></span>General</span>
       </div>
 
@@ -968,7 +960,7 @@ html,body{margin:0;padding:0;background:var(--m1);}
           <div class="prog-dot pd-general"></div>
           <div class="prog-body">
             <span class="prog-time">6:00 PM</span>
-            <span class="prog-name">Doors Open & Welcome Drinks</span>
+            <span class="prog-name">Doors Open &amp; Welcome Drinks</span>
             <span class="prog-resp">Venue Team · Bar Team</span>
           </div>
           <span class="prog-badge pb-general">General</span>
@@ -978,7 +970,7 @@ html,body{margin:0;padding:0;background:var(--m1);}
           <div class="prog-dot pd-general"></div>
           <div class="prog-body">
             <span class="prog-time">6:00 – 7:00 PM</span>
-            <span class="prog-name">Social Gathering & Meet/Greet</span>
+            <span class="prog-name">Social Gathering &amp; Meet/Greet</span>
             <span class="prog-resp">Host Family · Ushers</span>
           </div>
           <span class="prog-badge pb-general">General</span>
@@ -1037,7 +1029,17 @@ html,body{margin:0;padding:0;background:var(--m1);}
         <div class="prog-item">
           <div class="prog-dot pd-speech"></div>
           <div class="prog-body">
-            <span class="prog-time">7:50 – 8:00 PM</span>
+            <span class="prog-time">7:50 – 7:55 PM</span>
+            <span class="prog-name">🥂 Barbara Butvilas</span>
+            <span class="prog-resp">Michelle's Mother</span>
+          </div>
+          <span class="prog-badge pb-speech">Toast</span>
+        </div>
+
+        <div class="prog-item">
+          <div class="prog-dot pd-speech"></div>
+          <div class="prog-body">
+            <span class="prog-time">7:55 – 8:00 PM</span>
             <span class="prog-name">🥂 Nicole Farah Toast</span>
             <span class="prog-resp">Nicole Farah</span>
           </div>
@@ -1047,7 +1049,7 @@ html,body{margin:0;padding:0;background:var(--m1);}
         <div class="prog-item">
           <div class="prog-dot pd-speech"></div>
           <div class="prog-body">
-            <span class="prog-time">8:00 – 8:10 PM</span>
+            <span class="prog-time">8:00 – 8:05 PM</span>
             <span class="prog-name">🥂 Anthony Razzano Toast</span>
             <span class="prog-resp">Anthony Razzano</span>
           </div>
@@ -1055,9 +1057,19 @@ html,body{margin:0;padding:0;background:var(--m1);}
         </div>
 
         <div class="prog-item">
-          <div class="prog-dot pd-bar" style="background:rgba(80,40,10,1);"></div>
+          <div class="prog-dot pd-speech"></div>
           <div class="prog-body">
-            <span class="prog-time">8:00 – 8:30 PM</span>
+            <span class="prog-time">8:05 – 8:10 PM</span>
+            <span class="prog-name">🥂 Rajesh Chennuru Toast</span>
+            <span class="prog-resp">Rajesh Chennuru</span>
+          </div>
+          <span class="prog-badge pb-speech">Toast</span>
+        </div>
+
+        <div class="prog-item">
+          <div class="prog-dot" style="background:rgba(80,40,10,1);"></div>
+          <div class="prog-body">
+            <span class="prog-time">7:50 – 8:30 PM</span>
             <span class="prog-name">🚫 Bar Temporarily Closed</span>
             <span class="prog-resp">Bar Team</span>
           </div>
@@ -1098,7 +1110,7 @@ html,body{margin:0;padding:0;background:var(--m1);}
           <div class="prog-dot pd-dance"></div>
           <div class="prog-body">
             <span class="prog-time">8:25 – 8:30 PM</span>
-            <span class="prog-name">Parents & Family Performance</span>
+            <span class="prog-name">Parents &amp; Family Performance</span>
             <span class="prog-resp">Family</span>
           </div>
           <span class="prog-badge pb-dance">Performance</span>
@@ -1134,13 +1146,12 @@ html,body{margin:0;padding:0;background:var(--m1);}
           <span class="prog-badge pb-dance">Celebration</span>
         </div>
 
-      </div><!-- /prog-list -->
+      </div>
 
-      <!-- Notes -->
       <div class="prog-note">
         <span class="prog-note-title">📌 Please Note</span>
         <span class="prog-note-item">Kindly be seated before 7:10 PM for smooth grand entries.</span>
-        <span class="prog-note-item">Formal program concludes by 8:30 PM followed by dinner & celebrations.</span>
+        <span class="prog-note-item">Formal program concludes by 8:30 PM followed by dinner &amp; celebrations.</span>
         <span class="prog-note-item">Dance floor remains open for all guests after dinner begins.</span>
       </div>
 
